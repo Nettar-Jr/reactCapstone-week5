@@ -5,7 +5,7 @@ function GetTours() {
 
     const [getTours, setgetTours] = useState([])
 
-
+    const [buttonText, setButtonText] = useState(false);
 
     const url = 'https://course-api.com/react-tours-project';
 
@@ -21,6 +21,10 @@ function GetTours() {
         const newTours = getTours.filter((tour) => tour.id !== id);
 
         setgetTours(newTours);
+
+        if(getTours.length===0){
+            setButtonText(true);
+        }
     }
     const creatTours = (getTours)=>{
         return  <li id={getTours.id}>
@@ -43,6 +47,9 @@ function GetTours() {
     let tours = getTours.map(creatTours);
 
     return (
+        <>
+    {
+        buttonText?<div><button>refresh</button></div>:
     
         <ul className='tour-contianer'>
             <h1 className="title">Our Tours
@@ -50,7 +57,8 @@ function GetTours() {
             </h1>
             
             {tours}         
-        </ul>
+        </ul>}
+        </>
     )
     
 }
