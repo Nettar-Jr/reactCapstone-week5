@@ -17,21 +17,24 @@ function GetTours() {
         console.log(data[0]);
     }
 
+    const delTour = (id)=> {
+        const newTours = getTours.filter((tour) => tour.id !== id);
+
+        setgetTours(newTours);
+    }
     const creatTours = (getTours)=>{
         return  <li id={getTours.id}>
                     <img src={getTours.image} alt="" />
                     <div className="details footer">
                         <p className="name-price"><span className="name">{getTours.name}</span><span className="price">{'$' + getTours.price}</span></p>
                         <p className="info">{getTours.info}</p>
-                        <button className="del-Btn " onClick={delTour} >Not Interested</button>
+                        <button className="del-Btn " onClick={()=>delTour(getTours.id)} >Not Interested</button>
                     </div>
                 
                 </li>
     }
 
-    const delTour = ()=> {
-        
-    }
+  
 
     window.onload = ()=> {
         fetchData()
