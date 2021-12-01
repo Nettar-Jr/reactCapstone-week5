@@ -11,12 +11,19 @@ function GetTours() {
   const url = "https://course-api.com/react-tours-project";
 
   const fetchData = async () => {
-    const response = await fetch(url);
-    const data = await response.json();
-    setgetTours(data);
-    setIsLoaded(true);
-    setTourTitle(true);
-    console.log(data[0]);
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        setgetTours(data);
+        setIsLoaded(true);
+        setTourTitle(true);
+        console.log(data[0]);
+    } 
+    catch (error) {
+        console.log(error)
+    }
+   
   };
 
   useEffect(() => {
@@ -79,7 +86,7 @@ function GetTours() {
   return (
     <>
       {!isloaded ? (
-        <h1>Loading</h1>
+        <h1 className="loading">Loading...</h1>
       ) : (
         <ul className="tour-contianer">
           <h1 className="title">
