@@ -1,6 +1,10 @@
 .main {
-  width: 90vw;
+  width: 100%;
+  height: 100vh;
   margin: 5rem auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .tour-contianer{

@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import GetTours from './components/GetTours.jsx';
 
