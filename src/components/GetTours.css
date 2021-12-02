@@ -88,3 +88,9 @@ p.info{
     letter-spacing: 1px;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 600px){
+    li{
+        width: 100% !important;
+    }
+}
