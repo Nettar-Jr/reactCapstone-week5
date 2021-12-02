@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./GetTours.css";
+// import ReactLoading from 'react-loading';
+import CircleLoader from "react-spinners/CircleLoader";
 
 function GetTours() {
   const [getTours, setgetTours] = useState([]);
@@ -86,7 +88,9 @@ function GetTours() {
   return (
     <>
       {!isloaded ? (
-        <h1 className="loading">Loading...</h1>
+        <CircleLoader 
+          color={"#F37A24"}  
+          size={150} />
       ) : (
         <ul className="tour-contianer">
           <h1 className="title">
